@@ -1,6 +1,79 @@
+
 <html>
   <title>Aman Tiwari</title>
-  <h1>
-    Hi I'm Aman Tiwari
-  </h1>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap" rel="stylesheet">
   </html>
+<body class="body overflow-auto">
+  
+  <div class="flex justify-between p-12">
+    <div class="rounded-full h-12 w-12 flex items-center justify-center bg-transparent border-4 rounded-3xl border-blue-400">
+      <div>
+        <h1 class="text-2 xl text-indigo-700 font-medium">
+          AT
+        </h1>
+      </div>
+    </div>  
+    <div class="flex inline-block">
+      <button class="text-xl font-normal text-white hover:text-blue-400 px-7">Projects</button>
+      <button class="text-xl font-normal text-white hover:text-blue-400 px-7">Contacts</button>
+      <button class="text-xl font-normal text-white hover:text-blue-400 px-7">Skills</button>
+    </div>
+  </div>
+  <div class="flex justify-between p-12">
+    <div class = "p-12">
+      <h1 class="text-5xl font-thin  text-white">
+        Hi I am 
+      </h1>
+      <h1 class="name text-7xl font-normal  text-blue-900">
+       Aman <br /> Tiwari
+      </h1>
+    </div class = "p-12">
+    <h1 class="text-2xl text-white">
+      I am a Flutter app  developer
+    </h1>
+ 
+    <div>
+
+    </div>
+
+  </div>
+  <div>
+    <h1 class="text-center text-white text-4xl font-thin m-12 p-12">
+      Projects
+    </h1>
+  </div>
+  
+</body>
+<style>
+  .name{
+    font-family: 'Comfortaa', cursive;
+    animation: fadeInAnimation ease 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  @keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+  } 
+  .body{
+
+    -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none; 
+    background-color: #030217;
+
+  }
+  .container::-webkit-scrollbar { 
+    width: 0;
+    height: 0;  /* Safari and Chrome */
+}
+
+</style>  
+
+ 
