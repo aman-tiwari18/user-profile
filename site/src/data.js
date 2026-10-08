@@ -78,17 +78,6 @@ export const experience = [
     ],
     tags: ['Node.js', 'PostgreSQL', 'Redis', 'OpenSearch'],
   },
-  {
-    version: 'v0.1.0',
-    codename: 'bootstrap',
-    company: 'Bundelkhand Institute of Engineering and Technology',
-    role: 'B.Tech, Electronics & Communication',
-    period: '2019 — 2023',
-    location: 'Jhansi, India',
-    summary: 'Signals and systems by day, data structures, algorithms and the web by night.',
-    changes: [],
-    tags: ['C++', 'DSA', 'OS', 'DBMS', 'Networking'],
-  },
 ]
 
 export const education = {
@@ -96,6 +85,7 @@ export const education = {
   degree: 'B.Tech, Electronics and Communication Engineering',
   period: '2019 — 2023',
   location: 'Jhansi, India',
+  focus: ['Data Structures & Algorithms', 'Operating Systems', 'DBMS', 'Computer Networks', 'C++'],
 }
 
 export const skills = {

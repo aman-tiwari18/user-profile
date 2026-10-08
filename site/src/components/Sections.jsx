@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, lazy, Suspense } from 'react'
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion'
-import { profile, stats, experience, skills, sphereWords } from '../data'
+import { profile, stats, experience, education, skills, sphereWords } from '../data'
 import { scrollTo, gsap, ScrollTrigger } from '../scroll'
 
 const SkillSphere = lazy(() => import('../three/SkillSphere'))
@@ -228,6 +228,12 @@ export function About() {
             Before that I shipped healthcare and pharmacy systems at <b>Cappsule</b> and <b>Linsible</b>, working on Node.js APIs, RBAC, Redis caching, search and CI/CD.
             I care about fast APIs, clean data models and dashboards people actually use.
           </p>
+          <div className="edu">
+            <span className="mono kicker">// education</span>
+            <h4>{education.degree}</h4>
+            <p className="muted">{education.school} · {education.location} · {education.period}</p>
+            <div className="tags">{education.focus.map((f) => <span key={f}>{f}</span>)}</div>
+          </div>
         </motion.div>
         <div className="stats">
           {stats.map((s, i) => (
