@@ -126,6 +126,9 @@ main, .nav, .footer { position: relative; z-index: 3; }
 .socials a { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 10px; font-family: var(--mono); font-size: 12px; transition: all 0.2s; background: rgba(255,236,200,.02); }
 .socials a:hover { border-color: var(--amber); color: var(--amber); transform: translateY(-3px); }
 .scroll-hint { position: absolute; bottom: 24px; left: var(--pad); display: flex; align-items: center; gap: 12px; font-size: 11px; color: var(--muted); letter-spacing: 0.2em; text-transform: uppercase; }
+.hint-3d { color: var(--amber); opacity: 0.8; }
+.hint-touch { display: none; }
+@media (hover: none) { .hint-mouse { display: none; } .hint-touch { display: inline; } }
 .scroll-hint i { width: 60px; height: 1px; background: linear-gradient(90deg, var(--amber), transparent); animation: drip 2s infinite; transform-origin: left; }
 @keyframes drip { 0% { transform: scaleX(0) } 50% { transform: scaleX(1) } 100% { transform: scaleX(1); opacity: 0 } }
 

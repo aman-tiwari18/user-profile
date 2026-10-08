@@ -167,7 +167,7 @@ export function Hero() {
         </motion.div>
       </div>
       <OpsConsole />
-      <div className="scroll-hint mono"><span>scroll</span><i /></div>
+      <div className="scroll-hint mono"><span>scroll</span><i /><span className="hint-3d hint-mouse">drag the 3D objects</span><span className="hint-3d hint-touch">tap &amp; drag the 3D objects</span></div>
     </section>
   )
 }

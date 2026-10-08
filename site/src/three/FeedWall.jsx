@@ -88,6 +88,7 @@ const RADIUS = 6
 function Tile({ index, position, rotation, dim, labels = true }) {
   const mat = useRef()
   const label = useRef()
+  const forced = useRef(0)
   const seed = useMemo(() => Math.random() * 100, [])
   const uniforms = useMemo(() => ({ uTime: { value: 0 }, uSeed: { value: seed }, uAlert: { value: 0 }, uDim: { value: dim } }), [seed, dim])
   const cam = useMemo(() => `CAM-${String(1000 + Math.floor(seed * 89)).padStart(4, '0')}`, [seed])
@@ -96,13 +97,17 @@ function Tile({ index, position, rotation, dim, labels = true }) {
     uniforms.uTime.value = t
     // each tile raises an alert for ~1.6s on its own cycle
     const cycle = (t + seed * 3.7) % (9 + (index % 5) * 2)
-    const target = cycle < 1.6 ? 1 : 0
+    const target = cycle < 1.6 || performance.now() < forced.current ? 1 : 0
     uniforms.uAlert.value += (target - uniforms.uAlert.value) * 0.15
     if (label.current) label.current.color = uniforms.uAlert.value > 0.5 ? '#ff4b3e' : '#ffcf66'
   })
   return (
     <group position={position} rotation={rotation}>
-      <mesh>
+      <mesh
+        onPointerDown={(e) => { e.stopPropagation(); forced.current = performance.now() + 2200 }}
+        onPointerOver={() => { document.body.style.cursor = 'crosshair' }}
+        onPointerOut={() => { document.body.style.cursor = '' }}
+      >
         <planeGeometry args={[W, H]} />
         <shaderMaterial ref={mat} vertexShader={vert} fragmentShader={frag} uniforms={uniforms} />
       </mesh>

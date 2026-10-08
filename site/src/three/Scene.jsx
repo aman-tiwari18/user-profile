@@ -55,7 +55,8 @@ function Rig() {
 export default function Scene() {
   return (
     <div className="webgl" aria-hidden="true">
-      <Canvas dpr={[1, 1.75]} camera={{ position: [0, 0, 6], fov: 55 }} gl={{ antialias: true, powerPreference: 'high-performance', toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.1 }}>
+      {/* the canvas sits behind the page, so listen on #root to receive mouse/touch from anywhere */}
+      <Canvas eventSource={document.getElementById('root')} eventPrefix="client" dpr={[1, 1.75]} camera={{ position: [0, 0, 6], fov: 55 }} gl={{ antialias: true, powerPreference: 'high-performance', toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.1 }}>
         <color attach="background" args={['#0c0b09']} />
         <fog attach="fog" args={['#0c0b09', 8, 34]} />
         <ambientLight intensity={0.15} />
